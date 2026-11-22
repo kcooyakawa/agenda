@@ -36,6 +36,7 @@ h1 span{color:var(--pink);background:linear-gradient(90deg,var(--pink),var(--vio
 .dia.fora{border-color:#1a1a22;background:transparent}
 .dia.hoje{border:2px solid var(--violet);box-shadow:0 0 0 2px #b45cff33}
 .dia.tem{background:var(--lime);border-color:var(--lime);color:#111;font-weight:900}
+.dia.tem a.mais{display:inline-block;margin-top:6px;background:#111;color:var(--lime);border-radius:6px;padding:2px 6px;font-style:normal}
 .dia.tem a{display:block;color:#111;text-decoration:none;font:italic 700 12px/1.25 Montserrat,sans-serif;margin-top:4px}
 .sec{display:flex;align-items:center;gap:18px;margin:56px 0 22px}
 .sec b{width:8px;height:34px;background:var(--pink);transform:skewX(-18deg)}
@@ -114,7 +115,7 @@ function render(){
   for(let d=1;d<=dias;d++){
     const doDia=evs.filter(e=>{const x=dataDe(e);return x.getFullYear()===y&&x.getMonth()===m&&x.getDate()===d});
     const eh=d===hoje.getDate()&&m===hoje.getMonth()&&y===hoje.getFullYear();
-    cal.insertAdjacentHTML("beforeend",`<div class="dia${eh?" hoje":""}${doDia.length?" tem":""}">${d}${doDia.map(e=>`<a href="${esc(e.link)}" target="_blank" rel="noopener">${esc(e.nome)}</a>`).join("")}</div>`);
+    cal.insertAdjacentHTML("beforeend",`<div class="dia${eh?" hoje":""}${doDia.length?" tem":""}">${d}${doDia.slice(0,1).map(e=>`<a href="${esc(e.link)}" target="_blank" rel="noopener">${esc(e.nome.length>38?e.nome.slice(0,36)+"…":e.nome)}</a>`).join("")}${doDia.length>1?`<a href="#lista" class="mais">+${doDia.length-1} festa${doDia.length>2?"s":""}</a>`:""}</div>`);
   }
   const resto=(ini+dias)%7; if(resto) for(let i=resto;i<7;i++)cal.insertAdjacentHTML("beforeend",'<div class="dia fora"></div>');
   const lista=document.getElementById("lista");lista.innerHTML="";
