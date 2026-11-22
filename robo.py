@@ -23,7 +23,7 @@ CIDADES = {  # sympla : eventbrite
     "sao-carlos-sp": "sao-carlos", "santo-andre-sp": "santo-andre",
     "sao-bernardo-do-campo-sp": "sao-bernardo-do-campo", "guarulhos-sp": "guarulhos",
 }
-TEMA = re.compile(r"flash ?back|anos ?(70|80|90|2000)|\b(80|90|00)'?s\b|ploc|eurodance|poper[ôo]|"
+TEMA = re.compile(r"cl[uo]be dos 30|kombuca|flash ?back|anos ?(70|80|90|2000)|\b(80|90|00)'?s\b|ploc|eurodance|poper[ôo]|"
                   r"dance music|\btoco\b|kaikan|energia ?97|double you|remember|nostalgi|"
                   r"eletro ?hits|new wave|disco|cringe|passinho|freestyle", re.I)
 FORA = re.compile(r"pagode|sertanej|gospel|infantil|curso|workshop|palestra", re.I)
@@ -90,16 +90,60 @@ def extras():
     return evs
 
 
+MES = {"jan":1,"fev":2,"mar":3,"abr":4,"mai":5,"jun":6,"jul":7,"ago":8,"set":9,"out":10,"nov":11,"dez":12}
+
+
+def data_sympla(txt):
+    """'Sexta, 04 de Dez às 18:00' -> '2026-12-04T18:00'"""
+    m = re.search(r"(\d{1,2}) de (\w{3})\w*(?:.*?(\d{1,2}:\d{2}))?", txt, re.I)
+    if not m: return ""
+    d, mes = int(m.group(1)), MES.get(m.group(2).lower()[:3])
+    if not mes: return ""
+    hoje = dt.date.today(); ano = hoje.year + (1 if mes < hoje.month else 0)
+    return f"{ano}-{mes:02d}-{d:02d}T{m.group(3) or '22:00'}"
+
+
+def sympla(page, cidade, termo):
+    """Sympla monta a lista no navegador: usa Chromium (Playwright) e lê os cards."""
+    url = f"https://www.sympla.com.br/eventos/{cidade}?s={quote(termo)}"
+    try:
+        page.goto(url, wait_until="domcontentloaded", timeout=45000)
+        page.wait_for_selector('a[href*="/evento/"]', timeout=12000)
+    except Exception:
+        return []
+    cards = page.eval_on_selector_all('a[href*="/evento/"]', """els => els.map(a => ({
+        href: a.href.split('?')[0], txt: a.innerText,
+        img: (a.querySelector('img')||{}).src || ''}))""")
+    out = []
+    for c in cards:
+        linhas = [l.strip() for l in c["txt"].split("\n") if l.strip()]
+        if len(linhas) < 2: continue
+        quando = next((l for l in linhas if re.search(r"\d{1,2} de \w{3}", l)), "")
+        onde = next((l for l in linhas if re.search(r", [A-Z]{2}$", l)), "")
+        if onde and not onde.endswith("SP"): continue
+        out.append({"nome": linhas[0], "inicio": data_sympla(quando), "local": "",
+                    "cidade": onde.split(",")[0], "url": c["href"], "imagem": c["img"],
+                    "fonte": "sympla", "tipo": "show" if re.search(r"show|turn[êe]|tour", linhas[0], re.I) else "festa"})
+    return out
+
+
 def coleta():
     evs = []
+    from playwright.sync_api import sync_playwright
+    with sync_playwright() as p:
+        nav = p.chromium.launch()
+        page = nav.new_page(user_agent=UA["User-Agent"], locale="pt-BR")
+        for sym in CIDADES:
+            for t in TERMOS:
+                achou = sympla(page, sym, t)
+                print(f"- sympla {sym} · {t}: {len(achou)}")
+                evs += achou
+                time.sleep(1)
+        nav.close()
     for sym, eb in CIDADES.items():
-        for t in TERMOS:
-            print(f"- {sym} · {t}")
-            evs += get(f"https://www.sympla.com.br/eventos/{sym}?s={quote(t)}", "sympla")
+        for t in TERMOS[:6]:
             evs += get(f"https://www.eventbrite.com.br/d/brazil--{eb}/{quote(t.replace(' ', '-'))}/", "eventbrite")
-            time.sleep(1.2)
-    for t in TERMOS:
-        evs += get(f"https://shotgun.live/pt-br/cities/sao-paulo?search={quote(t)}", "shotgun")
+            time.sleep(1)
     hoje = dt.date.today().isoformat()
     vistos, final = set(), []
     for e in evs + extras():
