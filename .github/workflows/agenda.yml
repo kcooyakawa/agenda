@@ -14,6 +14,9 @@ jobs:
         with: {python-version: "3.12"}
       - run: pip install requests beautifulsoup4 playwright && playwright install --with-deps chromium
       - run: python robo.py
+        env:
+          GA4_ID: ${{ vars.GA4_ID }}
+          META_PIXEL_ID: ${{ vars.META_PIXEL_ID }}
       - run: |
           git config user.name "robo-ptj"; git config user.email "pumpthejamwear@gmail.com"
           git add docs && git commit -m "agenda atualizada" || echo "sem mudanças"
