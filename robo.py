@@ -108,16 +108,20 @@ def planilha():
     return evs
 
 
-def shotgun(page, termo):
-    """Shotgun: poucas buscas e pausas longas (bloqueia excesso)."""
+def shotgun(page):
+    """Shotgun: lê a lista de eventos de SP, filtra pelo tema e só abre os que combinam."""
     out = []
     try:
-        page.goto(f"https://shotgun.live/pt-br/cities/sao-paulo?search={quote(termo)}", wait_until="domcontentloaded", timeout=45000)
+        page.goto("https://shotgun.live/pt-br/cities/sao-paulo", wait_until="domcontentloaded", timeout=45000)
         page.wait_for_timeout(4000)
-        links = page.eval_on_selector_all('a[href*="/events/"]', "els=>[...new Set(els.map(a=>a.href.split('?')[0]))]")
+        for _ in range(8):
+            page.mouse.wheel(0, 4000); page.wait_for_timeout(1500)
+        cards = page.eval_on_selector_all('a[href*="/events/"]', "els=>els.map(a=>({h:a.href.split('?')[0],t:a.innerText}))")
     except Exception as e:
-        print("  ! shotgun busca:", e); return out
-    for href in links[:12]:
+        print("  ! shotgun lista:", e); return out
+    vistos = set()
+    alvo = [c["h"] for c in cards if TEMA.search(c["t"] + " " + c["h"].replace("-", " ")) and not (c["h"] in vistos or vistos.add(c["h"]))]
+    for href in alvo[:15]:
         time.sleep(4)
         try:
             page.goto(href, wait_until="domcontentloaded", timeout=45000)
@@ -125,7 +129,7 @@ def shotgun(page, termo):
                 ev = norm(e, "shotgun"); ev["url"] = ev["url"] or href; out.append(ev)
         except Exception as e:
             print("  ! shotgun evento:", e)
-    print(f"- shotgun {termo}: {len(out)}")
+    print(f"- shotgun: {len(cards)} na lista, {len(alvo)} no tema, {len(out)} lidos")
     return out
 
 
@@ -191,9 +195,7 @@ def coleta():
                 print(f"- sympla {sym} · {t}: {len(achou)}")
                 evs += achou
                 time.sleep(1)
-        for t in ["flashback", "anos 2000", "anos 90"]:
-            evs += shotgun(page, t)
-            time.sleep(8)
+        evs += shotgun(page)
         nav.close()
     for sym, eb in CIDADES.items():
         for t in TERMOS[:6]:
