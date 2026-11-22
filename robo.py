@@ -12,9 +12,7 @@ from urllib.parse import quote, urlencode, urlparse, urlunparse, parse_qsl
 import requests
 from bs4 import BeautifulSoup
 
-TERMOS = ["flashback", "anos 90", "anos 80", "anos 2000", "festa ploc", "eurodance",
-          "poperô", "dance 90", "toco", "kaikan", "energia 97", "double you",
-          "remember", "nostalgia", "eletrohits"]
+TERMOS = ["flashback", "anos 90", "anos 80", "anos 2000", "eurodance", "eletrohits", "remember", "kaikan", "double you", "energia 97"]
 CIDADES = {  # sympla : eventbrite
     "sao-paulo-sp": "sao-paulo", "campinas-sp": "campinas", "santos-sp": "santos",
     "sao-jose-dos-campos-sp": "sao-jose-dos-campos", "ribeirao-preto-sp": "ribeirao-preto",

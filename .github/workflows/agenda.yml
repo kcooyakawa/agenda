@@ -1,8 +1,8 @@
-# Roda o robô todo dia às 6h (horário de Brasília) nos servidores do GitHub,
+# Roda o robô segunda e quinta às 6h (horário de Brasília) nos servidores do GitHub,
 # mesmo com o Mac desligado. Grátis em repositório público.
 name: Agenda flashback
 on:
-  schedule: [{cron: "0 9 * * *"}]
+  schedule: [{cron: "0 9 * * 1,4"}]
   workflow_dispatch: {}
 permissions: {contents: write}
 jobs:
