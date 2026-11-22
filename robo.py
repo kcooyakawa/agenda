@@ -6,7 +6,7 @@ Fontes automáticas: Sympla, Eventbrite, Shotgun (dados JSON-LD das páginas de 
 Fonte manual: extras.csv (Toco, kaikans, Energia 97, shows como Double You...).
 Saída: docs/index.html (calendário visual), docs/agenda.json, docs/agenda.ics
 """
-import csv, json, re, time, html, datetime as dt
+import csv, json, os, re, time, html, unicodedata, datetime as dt
 from pathlib import Path
 from urllib.parse import quote, urlencode, urlparse, urlunparse, parse_qsl
 import requests
@@ -32,9 +32,15 @@ UTM = {"utm_source": "pumpthejam", "utm_medium": "agenda", "utm_campaign": "agen
 OUT = Path("docs"); OUT.mkdir(exist_ok=True)
 
 
-def com_utm(url, content):
+def slug(txt, n=40):
+    t = unicodedata.normalize("NFKD", txt or "").encode("ascii", "ignore").decode().lower()
+    return re.sub(r"[^a-z0-9]+", "-", t).strip("-")[:n]
+
+
+def com_utm(url, content, term=""):
     if not url: return ""
     p = urlparse(url); q = dict(parse_qsl(p.query)); q.update(UTM); q["utm_content"] = content
+    if term: q["utm_term"] = term
     return urlunparse(p._replace(query=urlencode(q)))
 
 
@@ -154,7 +160,7 @@ def coleta():
             vistos.add(k); final.append(e)
     final.sort(key=lambda e: e["inicio"])
     for e in final:
-        e["link"] = com_utm(e["url"], re.sub(r"[^a-z0-9]+", "-", e["nome"].lower())[:40])
+        e["link"] = com_utm(e["url"], slug(e["nome"]), slug(e.get("cidade", "")))
     return final
 
 
@@ -173,7 +179,9 @@ def pagina(evs):
     tpl = Path("template.html").read_text(encoding="utf-8")
     dados = json.dumps(evs, ensure_ascii=False).replace("</", "<\\/")
     agora = dt.datetime.now().strftime("%d/%m/%Y %H:%M")
-    (OUT / "index.html").write_text(tpl.replace("__DADOS__", dados).replace("__ATUALIZADO__", agora),
+    (OUT / "index.html").write_text((tpl.replace("__DADOS__", dados).replace("__ATUALIZADO__", agora)
+                                     .replace("__GA4_ID__", os.environ.get("GA4_ID", ""))
+                                     .replace("__META_PIXEL_ID__", os.environ.get("META_PIXEL_ID", ""))),
                                     encoding="utf-8")
 
 

@@ -92,6 +92,14 @@ h1 span{display:inline-block;background:linear-gradient(90deg,var(--pink),var(--
 footer{text-align:center;color:var(--mute);font-size:12px;padding:30px 0 50px}
 @media(max-width:640px){.dia{min-height:44px;padding:4px;font-size:12px}.dia.tem a{display:none}.lista{grid-template-columns:repeat(2,1fr);gap:10px}.card h4{font-size:13px}}
 </style>
+<script>
+/* Rastreamento: GA4 e Pixel da Meta. Os IDs vêm das variáveis GA4_ID e META_PIXEL_ID do repositório (Settings → Secrets and variables → Actions → Variables). */
+(function(){var GA="__GA4_ID__",PX="__META_PIXEL_ID__";
+if(GA&&GA.indexOf("__")!==0){var s=document.createElement("script");s.async=1;s.src="https://www.googletagmanager.com/gtag/js?id="+GA;document.head.appendChild(s);
+window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag("js",new Date());gtag("config",GA);}
+if(PX&&PX.indexOf("__")!==0){!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init",PX);fbq("track","PageView");}
+})();
+</script>
 </head>
 <body>
 <section class="hero">
@@ -140,7 +148,7 @@ sel.innerHTML='<option value="todas">Todas as cidades</option>'+cids.map(c=>`<op
 sel.onchange=()=>{cidade=sel.value;render()};fb.appendChild(sel);
 cids.slice(0,3).forEach(c=>{const b=document.createElement("button");b.textContent=c;b.dataset.c=c;b.onclick=()=>{cidade=cidade===c?"todas":c;sel.value=cidade;render()};fb.appendChild(b)});
 const filtrados=()=>EVS.filter(e=>cidade==="todas"||e.cidade===cidade);
-function track(e){try{window.fbq&&fbq("trackCustom","AgendaClick",{festa:e.nome,cidade:e.cidade});window.gtag&&gtag("event","agenda_click",{festa:e.nome,cidade:e.cidade})}catch(_){}}
+function track(e){var d={festa:e.nome,cidade:e.cidade,origem:SRC,meio:MED};try{window.fbq&&fbq("trackCustom","AgendaClick",d);window.gtag&&gtag("event","agenda_click",Object.assign({link_url:e.link},d))}catch(_){}}
 
 function render(){
   fb.querySelectorAll("button").forEach(b=>b.classList.toggle("on",b.dataset.c===cidade));sel.value=cidade;
