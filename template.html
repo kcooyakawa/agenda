@@ -81,6 +81,7 @@ h1 span{display:inline-block;background:linear-gradient(90deg,var(--pink),var(--
 .card .dt{display:flex;align-items:baseline;gap:10px}
 .card .dt b{font:italic 900 30px/1 Montserrat,sans-serif;color:var(--lime)}
 .card .dt span{font:italic 800 16px Montserrat,sans-serif;text-transform:uppercase}
+.card .tipo{align-self:flex-start;margin-top:6px;font:800 10px Montserrat,sans-serif;letter-spacing:.12em;text-transform:uppercase;background:var(--pink);color:#1a0010;border-radius:6px;padding:3px 7px}
 .card h4{font:italic 800 15px/1.25 Montserrat,sans-serif;margin:8px 0 10px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 .card .info{display:grid;grid-template-columns:22px 1fr;gap:10px 10px;color:#dcdae5;font-size:12.5px;align-items:start}
 .card .info svg{width:14px;height:14px;opacity:.8;margin-top:2px}
@@ -90,7 +91,8 @@ h1 span{display:inline-block;background:linear-gradient(90deg,var(--pink),var(--
 .links{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:18px 0}
 .links a{color:var(--fg);border:1px solid var(--line);border-radius:999px;padding:10px 18px;text-decoration:none;font-weight:600;font-size:14px}
 footer{text-align:center;color:var(--mute);font-size:12px;padding:30px 0 50px}
-@media(max-width:640px){.dia{min-height:44px;padding:4px;font-size:12px}.dia.tem a{display:none}.lista{grid-template-columns:repeat(2,1fr);gap:10px}.card h4{font-size:13px}}
+@media(max-width:640px){.dia{min-height:44px;padding:4px;font-size:12px}.dia.tem a{display:none}.lista{grid-template-columns:repeat(2,1fr);gap:10px}.card .tipo{align-self:flex-start;margin-top:6px;font:800 10px Montserrat,sans-serif;letter-spacing:.12em;text-transform:uppercase;background:var(--pink);color:#1a0010;border-radius:6px;padding:3px 7px}
+.card h4{font-size:13px}}
 </style>
 <script>
 /* Rastreamento: GA4 e Pixel da Meta. Os IDs vêm das variáveis GA4_ID e META_PIXEL_ID do repositório (Settings → Secrets and variables → Actions → Variables). */
@@ -172,7 +174,7 @@ function render(){
     const fb2=["img/globo.jpg","img/fone.jpg"][i%2];
     a.innerHTML=`<div class="img" style="background-image:url('${esc(e.imagem||fb2)}')"></div>
       <div class="tx"><div class="dt"><b>${String(x.getDate()).padStart(2,"0")}</b><span>${MESES[x.getMonth()].slice(0,3)}</span></div>
-      <h4>${esc(e.nome)}</h4>
+      ${e.tipo&&e.tipo!=="festa"?`<span class="tipo">${esc(e.tipo)}</span>`:""}<h4>${esc(e.nome)}</h4>
       <div class="info">${PIN}<div>${esc(e.local)}${e.local&&e.cidade?"<br>":""}${esc(e.cidade)}</div>${hora?CLK+`<div>${hora}</div>`:""}</div>
       <span class="go">→</span></div>`;
     a.classList.add("rev");a.style.transitionDelay=(i%2)*0.08+"s";a.onclick=()=>track(e);lista.appendChild(a);io&&io.observe(a)});

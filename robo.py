@@ -81,6 +81,54 @@ def get(url, fonte):
         print(f"  ! {fonte} {url[:70]}: {e}"); return []
 
 
+PLANILHA = "https://docs.google.com/spreadsheets/d/1bUdPBfMe9ZJufkDr8IeF9y_nkGOJFAbgWeyVDygfHhI/export?format=csv&gid=0"
+
+
+def planilha():
+    """Festas manuais (kaikans, Toco, Energia 97...) da planilha do Google."""
+    try:
+        r = requests.get(PLANILHA, headers=UA, timeout=25); r.raise_for_status()
+        r.encoding = "utf-8"
+        linhas = r.text.splitlines()
+        if not linhas or not linhas[0].lower().startswith("nome"): return []
+    except Exception as e:
+        print("  ! planilha:", e); return []
+    evs = []
+    for row in csv.DictReader(linhas):
+        nome = (row.get("nome") or "").strip(); data = (row.get("data") or "").strip()
+        if not nome or not data or nome.lower().startswith("exemplo"): continue
+        m = re.match(r"(\d{1,2})/(\d{1,2})/(\d{4})", data)
+        if m: data = f"{m.group(3)}-{int(m.group(2)):02d}-{int(m.group(1)):02d}"
+        hora = (row.get("hora") or "22:00").strip()[:5] or "22:00"
+        evs.append({"nome": nome, "inicio": f"{data}T{hora}", "local": (row.get("local") or "").strip(),
+                    "cidade": (row.get("cidade") or "").strip(), "url": (row.get("url") or "").strip(),
+                    "imagem": (row.get("imagem") or "").strip(), "fonte": "planilha",
+                    "tipo": (row.get("tipo") or "festa").strip().lower(), "manual": True})
+    print(f"- planilha: {len(evs)}")
+    return evs
+
+
+def shotgun(page, termo):
+    """Shotgun: poucas buscas e pausas longas (bloqueia excesso)."""
+    out = []
+    try:
+        page.goto(f"https://shotgun.live/pt-br/cities/sao-paulo?search={quote(termo)}", wait_until="domcontentloaded", timeout=45000)
+        page.wait_for_timeout(4000)
+        links = page.eval_on_selector_all('a[href*="/events/"]', "els=>[...new Set(els.map(a=>a.href.split('?')[0]))]")
+    except Exception as e:
+        print("  ! shotgun busca:", e); return out
+    for href in links[:12]:
+        time.sleep(4)
+        try:
+            page.goto(href, wait_until="domcontentloaded", timeout=45000)
+            for e in jsonld(page.content()):
+                ev = norm(e, "shotgun"); ev["url"] = ev["url"] or href; out.append(ev)
+        except Exception as e:
+            print("  ! shotgun evento:", e)
+    print(f"- shotgun {termo}: {len(out)}")
+    return out
+
+
 def extras():
     evs = []
     f = Path("extras.csv")
@@ -143,6 +191,9 @@ def coleta():
                 print(f"- sympla {sym} · {t}: {len(achou)}")
                 evs += achou
                 time.sleep(1)
+        for t in ["flashback", "anos 2000", "anos 90"]:
+            evs += shotgun(page, t)
+            time.sleep(8)
         nav.close()
     for sym, eb in CIDADES.items():
         for t in TERMOS[:6]:
@@ -150,7 +201,7 @@ def coleta():
             time.sleep(1)
     hoje = dt.date.today().isoformat()
     vistos, final = set(), []
-    for e in evs + extras():
+    for e in evs + extras() + planilha():
         k = (re.sub(r"\W", "", e["nome"].lower())[:40], e["inicio"][:10])
         txt = e["nome"] + " " + e["local"]
         ok = e.get("manual") or (TEMA.search(txt) and not FORA.search(txt))
