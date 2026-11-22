@@ -4,117 +4,130 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Agenda Flashback · PUMP THE JAM</title>
 <meta name="description" content="Calendário de festas flashback, anos 80, 90 e 2000 e dance music em São Paulo e no interior.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,800;0,900;1,800;1,900&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0b0b0d;--card:#141418;--line:#2a2a30;--fg:#f4f1ea;--mute:#9a978f;--pink:#ff2e88;--cyan:#00e5ff;--yel:#ffe600}
+:root{--bg:#0a0a10;--card:#15151d;--line:#2c2c38;--fg:#f4f1ea;--mute:#a19fae;--pink:#ff2e88;--lime:#e6ff2b;--violet:#b45cff}
 *{box-sizing:border-box;margin:0}
-body{background:var(--bg);color:var(--fg);font:15px/1.4 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
-main{max-width:1040px;margin:0 auto;padding:32px 16px 64px}
-header{text-align:center;margin-bottom:24px}
-h1{font-size:clamp(28px,6vw,52px);letter-spacing:.04em;line-height:1;
-   background:linear-gradient(90deg,var(--pink),var(--cyan));-webkit-background-clip:text;color:transparent}
-.sub{color:var(--mute);margin-top:8px}
-.bar{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:18px 0}
-.bar button,.bar a{background:var(--card);color:var(--fg);border:1px solid var(--line);border-radius:999px;
-   padding:8px 14px;font:inherit;cursor:pointer;text-decoration:none}
-.bar .on{border-color:var(--pink);color:var(--pink)}
-.mes{display:flex;align-items:center;justify-content:space-between;margin:10px 0}
-.mes h2{font-size:22px;text-transform:uppercase;letter-spacing:.12em}
-.mes button{background:none;border:1px solid var(--line);color:var(--fg);border-radius:10px;width:40px;height:40px;font-size:18px;cursor:pointer}
-.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
-.dow{color:var(--mute);font-size:11px;text-align:center;text-transform:uppercase;padding:4px}
-.dia{min-height:86px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:6px;font-size:12px}
-.dia.vazio{background:transparent;border:none}
-.dia.hoje{border-color:var(--cyan)}
-.dia .n{color:var(--mute);font-weight:700}
-.dia .ev{display:block;margin-top:4px;background:var(--pink);color:#000;border-radius:6px;padding:2px 5px;
-   font-weight:700;font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-decoration:none}
-.dia .ev.show{background:var(--yel)}
-.lista{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-top:28px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;text-decoration:none;color:var(--fg);transition:.15s}
-.card:hover{border-color:var(--pink);transform:translateY(-2px)}
-.card .img{aspect-ratio:16/9;background:linear-gradient(135deg,#2b0f3a,#0d2b3a) center/cover;position:relative}
-.card .data{position:absolute;left:10px;top:10px;background:#000c;border-radius:10px;padding:6px 10px;text-align:center;line-height:1}
-.card .data b{display:block;font-size:22px;color:var(--cyan)}
-.card .data span{font-size:11px;text-transform:uppercase}
-.card .tx{padding:12px 14px}
-.card h3{font-size:16px;margin-bottom:4px}
-.card p{color:var(--mute);font-size:13px}
-.tag{display:inline-block;font-size:10px;text-transform:uppercase;letter-spacing:.08em;border:1px solid var(--line);border-radius:6px;padding:2px 6px;margin-top:8px}
-.vazio-msg{text-align:center;color:var(--mute);padding:40px}
-.cta{display:block;text-align:center;margin-top:32px;padding:16px;border:1px dashed var(--pink);border-radius:16px;color:var(--pink);text-decoration:none}
-footer{text-align:center;color:var(--mute);font-size:12px;margin-top:28px}
-@media(max-width:640px){.dia{min-height:58px;padding:4px}.dia .ev{font-size:0;height:8px;padding:0}}
+body{background:var(--bg);color:var(--fg);font-family:Montserrat,system-ui,sans-serif}
+.hero{position:relative;overflow:hidden;padding:56px 0 28px;
+  background:
+   radial-gradient(circle at 88% 20%,#ff2e8855 0 6%,transparent 7%),
+   repeating-radial-gradient(circle at 88% 20%,#1b1020 0 3px,#2a1430 3px 5px),
+   radial-gradient(120% 90% at 85% 10%,#3a0f3a 0%,transparent 60%),var(--bg)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--bg) 30%,#0a0a10cc 55%,transparent 80%),linear-gradient(0deg,var(--bg),transparent 40%);pointer-events:none}
+.wrap{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 20px}
+.kick{display:flex;align-items:center;gap:12px;letter-spacing:.3em;font-weight:600;font-size:clamp(18px,3vw,30px)}
+.bars{display:flex;gap:3px;align-items:flex-end;height:26px}.bars i{width:6px;background:var(--pink);display:block}
+h1{font-weight:900;font-style:italic;font-size:clamp(52px,11vw,124px);line-height:.9;letter-spacing:-.02em}
+h1 span{color:var(--pink);background:linear-gradient(90deg,var(--pink),var(--violet));-webkit-background-clip:text;color:transparent}
+.sub{color:#e8e6ef;font-size:clamp(14px,1.8vw,19px);margin-top:10px}
+.pills{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.pills button{font:600 15px Montserrat,sans-serif;color:var(--fg);background:transparent;border:1.5px solid #ffffffcc;border-radius:999px;padding:10px 22px;cursor:pointer}
+.pills button.on{background:var(--pink);border-color:var(--pink);color:#1a0010}
+.mes{display:flex;align-items:center;justify-content:space-between;margin:34px 0 18px}
+.mes h2{font-weight:900;font-style:italic;font-size:clamp(28px,5vw,52px);text-transform:uppercase}
+.mes h2 span{color:var(--pink)}
+.mes button{width:46px;height:46px;border-radius:50%;border:1.5px solid #ffffffcc;background:none;color:var(--fg);font-size:20px;cursor:pointer}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
+.dow{text-align:center;font-weight:600;font-size:14px;letter-spacing:.05em;color:#d9d7e2;padding-bottom:4px}
+.dow.we{color:var(--pink);font-weight:800}
+.dia{min-height:82px;border:1px solid var(--line);border-radius:12px;padding:8px 10px;background:#0f0f16;font-size:20px;font-weight:600}
+.dia.fora{border-color:#1a1a22;background:transparent}
+.dia.hoje{border:2px solid var(--violet);box-shadow:0 0 0 2px #b45cff33}
+.dia.tem{background:var(--lime);border-color:var(--lime);color:#111;font-weight:900}
+.dia.tem a{display:block;color:#111;text-decoration:none;font:italic 700 12px/1.25 Montserrat,sans-serif;margin-top:4px}
+.sec{display:flex;align-items:center;gap:18px;margin:56px 0 22px}
+.sec b{width:8px;height:34px;background:var(--pink);transform:skewX(-18deg)}
+.sec h3{letter-spacing:.3em;font-weight:600;font-size:clamp(18px,2.4vw,26px);white-space:nowrap}
+.sec hr{flex:1;border:0;border-top:1px solid #ffffff99}
+.lista{display:grid;grid-template-columns:repeat(auto-fill,minmax(440px,1fr));gap:22px}
+.card{display:grid;grid-template-columns:42% 1fr;min-height:250px;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;color:var(--fg);text-decoration:none;transition:.2s}
+.card:hover{border-color:var(--pink);transform:translateY(-3px)}
+.card .img{background:center/cover no-repeat,
+  radial-gradient(circle at 60% 40%,#ff6ad5 0 8%,transparent 30%),
+  repeating-conic-gradient(from 0deg at 55% 45%,#ff2e88 0 8deg,#3a0f45 8deg 16deg),#2a0f3a}
+.card .tx{padding:22px 22px 18px;display:flex;flex-direction:column}
+.card .dt{display:flex;align-items:baseline;gap:10px}
+.card .dt b{font:italic 900 44px/1 Montserrat,sans-serif;color:var(--lime)}
+.card .dt span{font:italic 800 24px Montserrat,sans-serif;text-transform:uppercase}
+.card h4{font:italic 800 clamp(20px,2.2vw,26px)/1.2 Montserrat,sans-serif;margin:14px 0 16px}
+.card .info{display:grid;grid-template-columns:22px 1fr;gap:10px 10px;color:#dcdae5;font-size:15px;align-items:start}
+.card .info svg{width:18px;height:18px;opacity:.8;margin-top:2px}
+.card .go{margin-top:auto;align-self:flex-end;width:44px;height:44px;border:1.5px solid #fff;border-radius:50%;display:grid;place-items:center;font-size:20px}
+.vazio{color:var(--mute);text-align:center;padding:40px}
+.cta{display:block;text-align:center;margin:44px 0 0;padding:18px;border:1.5px dashed var(--pink);border-radius:14px;color:var(--pink);text-decoration:none;font-weight:700}
+.links{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:18px 0}
+.links a{color:var(--fg);border:1px solid var(--line);border-radius:999px;padding:10px 18px;text-decoration:none;font-weight:600;font-size:14px}
+footer{text-align:center;color:var(--mute);font-size:12px;padding:30px 0 50px}
+@media(max-width:640px){.dia{min-height:54px;padding:5px;font-size:14px}.dia.tem a{display:none}.lista{grid-template-columns:1fr}.card{grid-template-columns:1fr}.card .img{min-height:170px}}
 </style>
 </head>
 <body>
-<main>
-<header>
-  <h1>AGENDA FLASHBACK</h1>
+<section class="hero"><div class="wrap">
+  <div class="kick"><span class="bars"><i style="height:30%"></i><i style="height:55%"></i><i style="height:75%"></i><i style="height:100%"></i></span>AGENDA</div>
+  <h1>FLASHBACK<span>///</span></h1>
   <p class="sub">Festas anos 80, 90 e 2000 e dance music · São Paulo e interior</p>
-</header>
+  <div class="pills" id="filtros"></div>
+</div></section>
 
-<div class="bar" id="filtros"></div>
+<main class="wrap">
+  <div class="mes"><button id="ant" aria-label="Mês anterior">‹</button><h2 id="titulo"></h2><button id="prox" aria-label="Próximo mês">›</button></div>
+  <div class="cal" id="cal"></div>
 
-<div class="mes"><button id="ant" aria-label="Mês anterior">‹</button><h2 id="titulo"></h2><button id="prox" aria-label="Próximo mês">›</button></div>
-<div class="cal" id="cal"></div>
+  <div class="sec"><b></b><h3>PRÓXIMAS FESTAS</h3><hr></div>
+  <div class="lista" id="lista"></div>
 
-<div class="lista" id="lista"></div>
-
-<a class="cta" id="cta" href="https://wa.me/5511996535565?text=Oi%21+Quero+colocar+minha+festa+na+Agenda+Flashback+PUMP+THE+JAM.+Nome%3A+...+Data%3A+...+Cidade%3A+...+Link%3A+...">
-  Produz festa flashback, show ou baile? Coloque na agenda →</a>
-<div class="bar"><a id="ics" href="agenda.ics">📅 Assinar no Google Agenda / iPhone</a>
-  <a id="loja" href="https://pumpthejam.com.br/collections/all">Camisetas PUMP THE JAM</a></div>
-
-<footer>PUMP THE JAM · atualizado em __ATUALIZADO__</footer>
+  <a class="cta" href="https://wa.me/5511996535565?text=Oi%21+Quero+colocar+minha+festa+na+Agenda+Flashback+PUMP+THE+JAM.+Nome%3A+...+Data%3A+...+Cidade%3A+...+Link%3A+...">Produz festa flashback, show ou baile? Coloque na agenda →</a>
+  <div class="links"><a href="agenda.ics">📅 Assinar no Google Agenda / iPhone</a><a id="loja" href="https://www.pumpthejam.com.br/collections/all">Camisetas PUMP THE JAM</a></div>
 </main>
+<footer>PUMP THE JAM · atualizado em __ATUALIZADO__</footer>
+
 <script>
-const EVS = __DADOS__;
+const EVS=__DADOS__;
 const MESES=["janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"];
-const q=new URLSearchParams(location.search);
-const SRC=q.get("utm_source")||"agenda", MED=q.get("utm_medium")||"agenda_page";
-// links próprios da marca herdam a origem de quem chegou
+const q=new URLSearchParams(location.search), SRC=q.get("utm_source")||"agenda", MED=q.get("utm_medium")||"agenda_page";
 const loja=new URL(document.getElementById("loja").href);
 loja.search=new URLSearchParams({utm_source:SRC,utm_medium:MED,utm_campaign:"agenda_flashback",utm_content:"camisetas"});
 document.getElementById("loja").href=loja;
-let cidade="todas", hoje=new Date(), ref=new Date(hoje.getFullYear(),hoje.getMonth(),1);
-
-const cidades=["todas",...new Set(EVS.map(e=>e.cidade).filter(Boolean))];
-const fb=document.getElementById("filtros");
-cidades.forEach(c=>{const b=document.createElement("button");b.textContent=c==="todas"?"Todas as cidades":c;
-  b.onclick=()=>{cidade=c;render()};b.dataset.c=c;fb.appendChild(b)});
-
-const filtrados=()=>EVS.filter(e=>cidade==="todas"||e.cidade===cidade);
-const dataDe=e=>new Date(e.inicio.slice(0,10)+"T12:00");
+const PIN='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-7.5 7-13a7 7 0 1 0-14 0c0 5.5 7 13 7 13z"/><circle cx="12" cy="9" r="2.5"/></svg>';
+const CLK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>';
 const esc=s=>(s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const dataDe=e=>new Date(e.inicio.slice(0,10)+"T12:00");
+let cidade="todas",hoje=new Date();
+let ref=new Date(hoje.getFullYear(),hoje.getMonth(),1);
 
-function track(e){try{window.fbq&&fbq("trackCustom","AgendaClick",{festa:e.nome,cidade:e.cidade});
-  window.gtag&&gtag("event","agenda_click",{festa:e.nome,cidade:e.cidade})}catch(_){}}
+const fb=document.getElementById("filtros");
+["todas",...new Set(EVS.map(e=>e.cidade).filter(Boolean))].forEach(c=>{const b=document.createElement("button");
+  b.textContent=c==="todas"?"Todas as cidades":c;b.dataset.c=c;b.onclick=()=>{cidade=c;render()};fb.appendChild(b)});
+const filtrados=()=>EVS.filter(e=>cidade==="todas"||e.cidade===cidade);
+function track(e){try{window.fbq&&fbq("trackCustom","AgendaClick",{festa:e.nome,cidade:e.cidade});window.gtag&&gtag("event","agenda_click",{festa:e.nome,cidade:e.cidade})}catch(_){}}
 
 function render(){
   fb.querySelectorAll("button").forEach(b=>b.classList.toggle("on",b.dataset.c===cidade));
-  const evs=filtrados(), y=ref.getFullYear(), m=ref.getMonth();
-  document.getElementById("titulo").textContent=MESES[m]+" "+y;
-  const cal=document.getElementById("cal"); cal.innerHTML="";
-  ["dom","seg","ter","qua","qui","sex","sáb"].forEach(d=>cal.insertAdjacentHTML("beforeend",`<div class="dow">${d}</div>`));
-  const ini=new Date(y,m,1).getDay(), dias=new Date(y,m+1,0).getDate();
-  for(let i=0;i<ini;i++) cal.insertAdjacentHTML("beforeend",'<div class="dia vazio"></div>');
+  const evs=filtrados(),y=ref.getFullYear(),m=ref.getMonth();
+  document.getElementById("titulo").innerHTML=`${MESES[m]} <span>${y}</span>`;
+  const cal=document.getElementById("cal");cal.innerHTML="";
+  ["DOM","SEG","TER","QUA","QUI","SEX","SÁB"].forEach((d,i)=>cal.insertAdjacentHTML("beforeend",`<div class="dow${i%6===0?" we":""}">${d}</div>`));
+  const ini=new Date(y,m,1).getDay(),dias=new Date(y,m+1,0).getDate();
+  for(let i=0;i<ini;i++)cal.insertAdjacentHTML("beforeend",'<div class="dia fora"></div>');
   for(let d=1;d<=dias;d++){
     const doDia=evs.filter(e=>{const x=dataDe(e);return x.getFullYear()===y&&x.getMonth()===m&&x.getDate()===d});
-    const eHoje=d===hoje.getDate()&&m===hoje.getMonth()&&y===hoje.getFullYear();
-    cal.insertAdjacentHTML("beforeend",`<div class="dia${eHoje?" hoje":""}"><span class="n">${d}</span>${
-      doDia.map(e=>`<a class="ev${e.tipo==="show"?" show":""}" href="${esc(e.link)}" target="_blank" rel="noopener" title="${esc(e.nome)}">${esc(e.nome)}</a>`).join("")}</div>`);
+    const eh=d===hoje.getDate()&&m===hoje.getMonth()&&y===hoje.getFullYear();
+    cal.insertAdjacentHTML("beforeend",`<div class="dia${eh?" hoje":""}${doDia.length?" tem":""}">${d}${doDia.map(e=>`<a href="${esc(e.link)}" target="_blank" rel="noopener">${esc(e.nome)}</a>`).join("")}</div>`);
   }
-  const lista=document.getElementById("lista"); lista.innerHTML="";
-  if(!evs.length){lista.innerHTML='<p class="vazio-msg">Nenhuma festa nesta cidade por enquanto.</p>';}
-  evs.forEach(e=>{
-    const x=dataDe(e), hora=e.inicio.slice(11,16);
-    const a=document.createElement("a"); a.className="card"; a.href=e.link; a.target="_blank"; a.rel="noopener";
-    a.innerHTML=`<div class="img" style="${e.imagem?`background-image:url('${esc(e.imagem)}')`:""}">
-      <div class="data"><b>${x.getDate()}</b><span>${MESES[x.getMonth()].slice(0,3)}</span></div></div>
-      <div class="tx"><h3>${esc(e.nome)}</h3><p>${esc(e.local)}${e.local&&e.cidade?" · ":""}${esc(e.cidade)}${hora?" · "+hora:""}</p>
-      <span class="tag">${e.tipo==="show"?"show":"festa"}</span></div>`;
-    a.onclick=()=>track(e); lista.appendChild(a);
-  });
+  const resto=(ini+dias)%7; if(resto) for(let i=resto;i<7;i++)cal.insertAdjacentHTML("beforeend",'<div class="dia fora"></div>');
+  const lista=document.getElementById("lista");lista.innerHTML="";
+  const futuros=evs.filter(e=>dataDe(e)>=new Date(hoje.toDateString()));
+  if(!futuros.length)lista.innerHTML='<p class="vazio">Nenhuma festa nesta cidade por enquanto.</p>';
+  futuros.forEach(e=>{const x=dataDe(e),hora=e.inicio.slice(11,16);
+    const a=document.createElement("a");a.className="card";a.href=e.link;a.target="_blank";a.rel="noopener";
+    a.innerHTML=`<div class="img" style="${e.imagem?`background-image:url('${esc(e.imagem)}')`:""}"></div>
+      <div class="tx"><div class="dt"><b>${String(x.getDate()).padStart(2,"0")}</b><span>${MESES[x.getMonth()].slice(0,3)}</span></div>
+      <h4>${esc(e.nome)}</h4>
+      <div class="info">${PIN}<div>${esc(e.local)}${e.local&&e.cidade?"<br>":""}${esc(e.cidade)}</div>${hora?CLK+`<div>${hora}</div>`:""}</div>
+      <span class="go">→</span></div>`;
+    a.onclick=()=>track(e);lista.appendChild(a)});
 }
 document.getElementById("ant").onclick=()=>{ref.setMonth(ref.getMonth()-1);render()};
 document.getElementById("prox").onclick=()=>{ref.setMonth(ref.getMonth()+1);render()};
