@@ -9,13 +9,13 @@
 <style>
 :root{--bg:#0a0a10;--card:#15151d;--line:#2c2c38;--fg:#f4f1ea;--mute:#a19fae;--pink:#ff2e88;--lime:#e6ff2b;--violet:#b45cff}
 *{box-sizing:border-box;margin:0}
-body{background:var(--bg);color:var(--fg);font-family:Montserrat,system-ui,sans-serif}
+body{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cg fill='none' stroke-width='3' opacity='.16'%3E%3Cpath d='M20 40 l15-15 15 15 15-15 15 15' stroke='%23ff2e88'/%3E%3Ccircle cx='170' cy='50' r='10' stroke='%23e6ff2b'/%3E%3Cpath d='M150 170 l20-30 20 30z' stroke='%2300e5ff'/%3E%3Cpath d='M40 160 q15-20 30 0 t30 0' stroke='%23b45cff'/%3E%3C/g%3E%3Cg fill='%23ffffff' opacity='.08'%3E%3Ccircle cx='110' cy='110' r='2'/%3E%3Ccircle cx='200' cy='120' r='2'/%3E%3Ccircle cx='90' cy='200' r='2'/%3E%3C/g%3E%3C/svg%3E"),var(--bg);color:var(--fg);font-family:Montserrat,system-ui,sans-serif}
 .hero{position:relative;overflow:hidden;padding:56px 0 28px;
-  background:
+  background:url(img/hero-vinil.jpg) right top/auto 100% no-repeat,
    radial-gradient(circle at 88% 20%,#ff2e8855 0 6%,transparent 7%),
    repeating-radial-gradient(circle at 88% 20%,#1b1020 0 3px,#2a1430 3px 5px),
    radial-gradient(120% 90% at 85% 10%,#3a0f3a 0%,transparent 60%),var(--bg)}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--bg) 30%,#0a0a10cc 55%,transparent 80%),linear-gradient(0deg,var(--bg),transparent 40%);pointer-events:none}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--bg) 25%,#0a0a10aa 50%,transparent 75%),linear-gradient(0deg,var(--bg),transparent 40%);pointer-events:none}
 .wrap{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 20px}
 .kick{display:flex;align-items:center;gap:12px;letter-spacing:.3em;font-weight:600;font-size:clamp(18px,3vw,30px)}
 .bars{display:flex;gap:3px;align-items:flex-end;height:26px}.bars i{width:6px;background:var(--pink);display:block}
@@ -120,9 +120,10 @@ function render(){
   const lista=document.getElementById("lista");lista.innerHTML="";
   const futuros=evs.filter(e=>dataDe(e)>=new Date(hoje.toDateString()));
   if(!futuros.length)lista.innerHTML='<p class="vazio">Nenhuma festa nesta cidade por enquanto.</p>';
-  futuros.forEach(e=>{const x=dataDe(e),hora=e.inicio.slice(11,16);
+  futuros.forEach((e,i)=>{const x=dataDe(e),hora=e.inicio.slice(11,16);
     const a=document.createElement("a");a.className="card";a.href=e.link;a.target="_blank";a.rel="noopener";
-    a.innerHTML=`<div class="img" style="${e.imagem?`background-image:url('${esc(e.imagem)}')`:""}"></div>
+    const fb2=["img/globo.jpg","img/fone.jpg"][i%2];
+    a.innerHTML=`<div class="img" style="background-image:url('${esc(e.imagem||fb2)}')"></div>
       <div class="tx"><div class="dt"><b>${String(x.getDate()).padStart(2,"0")}</b><span>${MESES[x.getMonth()].slice(0,3)}</span></div>
       <h4>${esc(e.nome)}</h4>
       <div class="info">${PIN}<div>${esc(e.local)}${e.local&&e.cidade?"<br>":""}${esc(e.cidade)}</div>${hora?CLK+`<div>${hora}</div>`:""}</div>
