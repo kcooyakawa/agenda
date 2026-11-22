@@ -12,8 +12,8 @@
 body{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cg fill='none' stroke-width='3' opacity='.16'%3E%3Cpath d='M20 40 l15-15 15 15 15-15 15 15' stroke='%23ff2e88'/%3E%3Ccircle cx='170' cy='50' r='10' stroke='%23e6ff2b'/%3E%3Cpath d='M150 170 l20-30 20 30z' stroke='%2300e5ff'/%3E%3Cpath d='M40 160 q15-20 30 0 t30 0' stroke='%23b45cff'/%3E%3C/g%3E%3Cg fill='%23ffffff' opacity='.08'%3E%3Ccircle cx='110' cy='110' r='2'/%3E%3Ccircle cx='200' cy='120' r='2'/%3E%3Ccircle cx='90' cy='200' r='2'/%3E%3C/g%3E%3C/svg%3E"),var(--bg);color:var(--fg);font-family:Montserrat,system-ui,sans-serif}
 .hero{position:relative;overflow:hidden;padding:90px 0 60px;min-height:520px;background:radial-gradient(90% 120% at 85% 0%,#3b0d3d 0%,#14081a 45%,var(--bg) 75%)}
 .hero .dots{position:absolute;inset:-10% auto auto -5%;width:340px;height:340px;background:radial-gradient(#7a5cff 1.5px,transparent 2px) 0 0/14px 14px;opacity:.45;-webkit-mask:radial-gradient(circle,#000 30%,transparent 70%);mask:radial-gradient(circle,#000 30%,transparent 70%);will-change:transform}
-.deck{position:absolute;inset:-6% 0 -14% 0;will-change:transform}
-.deck .foto{position:absolute;inset:0;background:url(img/toca-discos.jpg) 30% center/cover no-repeat;animation:respira 8s ease-in-out infinite alternate}
+.deck{position:absolute;inset:0 0 -10% 0;will-change:transform}
+.deck .foto{position:absolute;inset:0;background:url(img/toca-discos.jpg) right top/max(100%,1300px) auto no-repeat;-webkit-mask:linear-gradient(180deg,#000 55%,transparent 92%);mask:linear-gradient(180deg,#000 55%,transparent 92%);animation:respira 8s ease-in-out infinite alternate}
 @keyframes respira{from{transform:scale(1.02)}to{transform:scale(1.08) translateX(-14px)}}
 .vinil{position:absolute;inset:0;border-radius:50%;
   background:radial-gradient(circle,#ff2e88 0 10%,#ffd1e8 10.4% 11%,#c2186b 11.4% 17%,#0b0b0f 17.5% 18.5%,transparent 19%),
@@ -24,7 +24,7 @@ body{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg
 .braco{position:absolute;right:4%;top:8%;width:40%;height:5%;transform-origin:92% 50%;transform:rotate(-38deg);animation:braco 6s ease-in-out infinite alternate}
 .braco i{position:absolute;right:0;top:20%;width:100%;height:22%;border-radius:8px;background:linear-gradient(#e9e9ef,#8d8d99)}
 .braco b{position:absolute;left:-6%;top:-10%;width:16%;height:120%;border-radius:6px;background:linear-gradient(#cfcfd8,#55555f)}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0a0a10d0 10%,#0a0a1060 40%,transparent 60%),linear-gradient(0deg,var(--bg),transparent 35%);pointer-events:none}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0a0a10b0 5%,transparent 45%),linear-gradient(0deg,var(--bg),transparent 35%);pointer-events:none}
 @keyframes gira{to{transform:rotate(360deg)}}
 @keyframes braco{to{transform:rotate(-33deg)}}
 .wrap{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 20px}
