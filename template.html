@@ -10,12 +10,12 @@
 :root{--bg:#0a0a10;--card:#15151d;--line:#2c2c38;--fg:#f4f1ea;--mute:#a19fae;--pink:#ff2e88;--lime:#e6ff2b;--violet:#b45cff}
 *{box-sizing:border-box;margin:0}
 body{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cg fill='none' stroke-width='3' opacity='.16'%3E%3Cpath d='M20 40 l15-15 15 15 15-15 15 15' stroke='%23ff2e88'/%3E%3Ccircle cx='170' cy='50' r='10' stroke='%23e6ff2b'/%3E%3Cpath d='M150 170 l20-30 20 30z' stroke='%2300e5ff'/%3E%3Cpath d='M40 160 q15-20 30 0 t30 0' stroke='%23b45cff'/%3E%3C/g%3E%3Cg fill='%23ffffff' opacity='.08'%3E%3Ccircle cx='110' cy='110' r='2'/%3E%3Ccircle cx='200' cy='120' r='2'/%3E%3Ccircle cx='90' cy='200' r='2'/%3E%3C/g%3E%3C/svg%3E"),var(--bg);color:var(--fg);font-family:Montserrat,system-ui,sans-serif}
-.hero{position:relative;overflow:hidden;padding:56px 0 28px;
-  background:url(img/hero-vinil.jpg) right top/auto 100% no-repeat,
+.hero{position:relative;overflow:hidden;padding:80px 0 44px;min-height:420px;
+  background:url(img/hero-pista.jpg) center 35%/cover no-repeat,
    radial-gradient(circle at 88% 20%,#ff2e8855 0 6%,transparent 7%),
    repeating-radial-gradient(circle at 88% 20%,#1b1020 0 3px,#2a1430 3px 5px),
    radial-gradient(120% 90% at 85% 10%,#3a0f3a 0%,transparent 60%),var(--bg)}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--bg) 25%,#0a0a10aa 50%,transparent 75%),linear-gradient(0deg,var(--bg),transparent 40%);pointer-events:none}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0a0a10f0 15%,#0a0a10b0 45%,#0a0a1040 80%),linear-gradient(0deg,var(--bg),transparent 40%);pointer-events:none}
 .wrap{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 20px}
 .kick{display:flex;align-items:center;gap:12px;letter-spacing:.3em;font-weight:600;font-size:clamp(18px,3vw,30px)}
 .bars{display:flex;gap:3px;align-items:flex-end;height:26px}.bars i{width:6px;background:var(--pink);display:block}
