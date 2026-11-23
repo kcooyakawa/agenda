@@ -133,17 +133,6 @@
     "link": "https://www.sympla.com.br/evento/trash-80-s-vila-olimpia-28-11/3650114?utm_source=pumpthejam&utm_medium=agenda&utm_campaign=agenda_flashback&utm_content=trash-80-s-vila-olimpia-28-11&utm_term=sao-paulo"
   },
   {
-    "nome": "Balada Flashback",
-    "inicio": "2026-11-28T19:00",
-    "local": "",
-    "cidade": "Cotia",
-    "url": "https://www.sympla.com.br/evento/balada-flashback/3662238",
-    "imagem": "https://images.sympla.com.br/6b0110e5e8983-xs.jpg",
-    "fonte": "sympla",
-    "tipo": "festa",
-    "link": "https://www.sympla.com.br/evento/balada-flashback/3662238?utm_source=pumpthejam&utm_medium=agenda&utm_campaign=agenda_flashback&utm_content=balada-flashback&utm_term=cotia"
-  },
-  {
     "nome": "THE DISCO - Festa VEM CHEGANDO O VERÃO",
     "inicio": "2026-11-28T20:00",
     "local": "",
@@ -197,17 +186,6 @@
     "fonte": "sympla",
     "tipo": "festa",
     "link": "https://www.sympla.com.br/evento/rubao-banda-especial-flashback/3659914?utm_source=pumpthejam&utm_medium=agenda&utm_campaign=agenda_flashback&utm_content=rubao-banda-especial-flashback&utm_term=ribeirao-preto"
-  },
-  {
-    "nome": "JÄGERS - Festa VIVA os anos 80",
-    "inicio": "2026-12-03T21:00",
-    "local": "",
-    "cidade": "Ribeirão Preto",
-    "url": "https://www.sympla.com.br/evento/jagers-festa-viva-os-anos-80/3657242",
-    "imagem": "https://images.sympla.com.br/6afc55363a9f2-xs.png",
-    "fonte": "sympla",
-    "tipo": "festa",
-    "link": "https://www.sympla.com.br/evento/jagers-festa-viva-os-anos-80/3657242?utm_source=pumpthejam&utm_medium=agenda&utm_campaign=agenda_flashback&utm_content=jagers-festa-viva-os-anos-80&utm_term=ribeirao-preto"
   },
   {
     "nome": "Kombuca Disco - Noite de Flashback",
@@ -309,6 +287,17 @@
     "link": "https://www.sympla.com.br/evento/soiree-apresenta-summer-eletrohits-adriano-pagani-dimy-soller-motiro-domingo-06-12/3655450?utm_source=pumpthejam&utm_medium=agenda&utm_campaign=agenda_flashback&utm_content=soiree-apresenta-summer-eletrohits-adria&utm_term=sao-paulo"
   },
   {
+    "nome": "Última Trash 80's do ano no Espaço Authoral - 12/12/26",
+    "inicio": "2026-12-12T19:00",
+    "local": "",
+    "cidade": "São Paulo",
+    "url": "https://www.sympla.com.br/evento/ultima-trash-80-s-do-ano-no-espaco-authoral-12-12-26/3663518",
+    "imagem": "https://images.sympla.com.br/6b044ecfcc168-xs.jpg",
+    "fonte": "sympla",
+    "tipo": "festa",
+    "link": "https://www.sympla.com.br/evento/ultima-trash-80-s-do-ano-no-espaco-authoral-12-12-26/3663518?utm_source=pumpthejam&utm_medium=agenda&utm_campaign=agenda_flashback&utm_content=ultima-trash-80-s-do-ano-no-espaco-autho&utm_term=sao-paulo"
+  },
+  {
     "nome": "Pra Sempre Cringe | São Carlos/SP",
     "inicio": "2026-12-12T21:00",
     "local": "",
@@ -341,6 +330,17 @@
     "tipo": "festa",
     "manual": true,
     "link": "https://www.sympla.com.br/evento/pra-sempre-cringe-sao-carlos-sp/3635982?utm_source=pumpthejam&utm_medium=agenda&utm_campaign=agenda_flashback&utm_content=pra-sempre-cringe-anos-80-90-e-00&utm_term=sao-carlos"
+  },
+  {
+    "nome": "SUMMER ELETRO HITS @ LE CLUB",
+    "inicio": "2026-12-12T22:30",
+    "local": "",
+    "cidade": "São Paulo",
+    "url": "https://www.sympla.com.br/evento/summer-eletro-hits-le-club/3626387",
+    "imagem": "https://images.sympla.com.br/5f282a0c6a2d9.png",
+    "fonte": "sympla",
+    "tipo": "festa",
+    "link": "https://www.sympla.com.br/evento/summer-eletro-hits-le-club/3626387?utm_source=pumpthejam&utm_medium=agenda&utm_campaign=agenda_flashback&utm_content=summer-eletro-hits-le-club&utm_term=sao-paulo"
   },
   {
     "nome": "A Night To Remember SÃO PAULO - Especial EX-ACTS - The Atro: Rua Rui Barbosa, 201",
@@ -429,5 +429,16 @@
     "fonte": "sympla",
     "tipo": "festa",
     "link": "https://www.sympla.com.br/evento/backspin-remember-2-edicao/3649916?utm_source=pumpthejam&utm_medium=agenda&utm_campaign=agenda_flashback&utm_content=backspin-remember-2-edicao&utm_term=campinas"
+  },
+  {
+    "nome": "Nostalgias 2000 A Festa: Aquecimento Show Pitbull - Rua Augusta, 591 - Véspera de Feriado",
+    "inicio": "2027-01-24T23:00",
+    "local": "",
+    "cidade": "São Paulo",
+    "url": "https://www.sympla.com.br/evento/nostalgias-2000-a-festa-aquecimento-show-pitbull-rua-augusta-591-vespera-de-feriado/3663930",
+    "imagem": "https://images.sympla.com.br/6b04a1884ad0e-xs.jpg",
+    "fonte": "sympla",
+    "tipo": "show",
+    "link": "https://www.sympla.com.br/evento/nostalgias-2000-a-festa-aquecimento-show-pitbull-rua-augusta-591-vespera-de-feriado/3663930?utm_source=pumpthejam&utm_medium=agenda&utm_campaign=agenda_flashback&utm_content=nostalgias-2000-a-festa-aquecimento-show&utm_term=sao-paulo"
   }
 ]

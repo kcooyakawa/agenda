@@ -88,137 +88,137 @@ LOCATION: - São Paulo
 URL:https://www.sympla.com.br/evento/trash-80-s-vila-olimpia-28-11/3650114?utm_source=pumpthejam&utm_medium=agenda&utm_campaign=agenda_flashback&utm_content=trash-80-s-vila-olimpia-28-11&utm_term=sao-paulo
 END:VEVENT
 BEGIN:VEVENT
-UID:ptj-12-20261128T1900@pumpthejam.com.br
-DTSTART;TZID=America/Sao_Paulo:20261128T190000
-SUMMARY:Balada Flashback
-LOCATION: - Cotia
-URL:https://www.sympla.com.br/evento/balada-flashback/3662238?utm_source=pumpthejam&utm_medium=agenda&utm_campaign=agenda_flashback&utm_content=balada-flashback&utm_term=cotia
-END:VEVENT
-BEGIN:VEVENT
-UID:ptj-13-20261128T2000@pumpthejam.com.br
+UID:ptj-12-20261128T2000@pumpthejam.com.br
 DTSTART;TZID=America/Sao_Paulo:20261128T200000
 SUMMARY:THE DISCO - Festa VEM CHEGANDO O VERÃO
 LOCATION: - São Bernardo do Campo
 URL:https://www.sympla.com.br/evento/the-disco-festa-vem-chegando-o-verao/3647396?utm_source=pumpthejam&utm_medium=agenda&utm_campaign=agenda_flashback&utm_content=the-disco-festa-vem-chegando-o-verao&utm_term=sao-bernardo-do-campo
 END:VEVENT
 BEGIN:VEVENT
-UID:ptj-14-20261128T2100@pumpthejam.com.br
+UID:ptj-13-20261128T2100@pumpthejam.com.br
 DTSTART;TZID=America/Sao_Paulo:20261128T210000
 SUMMARY:NOITE DO FLASHBACK DO DJ BIG NO CADILLAC!!!
 LOCATION: - Santos
 URL:https://www.sympla.com.br/evento/noite-do-flashback-do-dj-big-no-cadillac/3643388?utm_source=pumpthejam&utm_medium=agenda&utm_campaign=agenda_flashback&utm_content=noite-do-flashback-do-dj-big-no-cadillac&utm_term=santos
 END:VEVENT
 BEGIN:VEVENT
-UID:ptj-15-20261128T2200@pumpthejam.com.br
+UID:ptj-14-20261128T2200@pumpthejam.com.br
 DTSTART;TZID=America/Sao_Paulo:20261128T220000
 SUMMARY:2000! Especial SUMMER ELETROHITS + Rock, Emo, Pop e Indie
 LOCATION: - Campinas
 URL:https://www.sympla.com.br/evento/2000-especial-summer-eletrohits-rock-emo-pop-e-indie/3661658?utm_source=pumpthejam&utm_medium=agenda&utm_campaign=agenda_flashback&utm_content=2000-especial-summer-eletrohits-rock-emo&utm_term=campinas
 END:VEVENT
 BEGIN:VEVENT
-UID:ptj-16-20261128T2300@pumpthejam.com.br
+UID:ptj-15-20261128T2300@pumpthejam.com.br
 DTSTART;TZID=America/Sao_Paulo:20261128T230000
 SUMMARY:[festa] 23h: Mega80 | Anos 80 no Asteroid | Pop Rock Dance
 LOCATION: - Sorocaba
 URL:https://www.sympla.com.br/evento/festa-23h-mega80-anos-80-no-asteroid-pop-rock-dance/3637013?utm_source=pumpthejam&utm_medium=agenda&utm_campaign=agenda_flashback&utm_content=festa-23h-mega80-anos-80-no-asteroid-pop&utm_term=sorocaba
 END:VEVENT
 BEGIN:VEVENT
-UID:ptj-17-20261202T2100@pumpthejam.com.br
+UID:ptj-16-20261202T2100@pumpthejam.com.br
 DTSTART;TZID=America/Sao_Paulo:20261202T210000
 SUMMARY:RUBÃO & Banda - ESPECIAL FLASHBACK
 LOCATION: - Ribeirão Preto
 URL:https://www.sympla.com.br/evento/rubao-banda-especial-flashback/3659914?utm_source=pumpthejam&utm_medium=agenda&utm_campaign=agenda_flashback&utm_content=rubao-banda-especial-flashback&utm_term=ribeirao-preto
 END:VEVENT
 BEGIN:VEVENT
-UID:ptj-18-20261203T2100@pumpthejam.com.br
-DTSTART;TZID=America/Sao_Paulo:20261203T210000
-SUMMARY:JÄGERS - Festa VIVA os anos 80
-LOCATION: - Ribeirão Preto
-URL:https://www.sympla.com.br/evento/jagers-festa-viva-os-anos-80/3657242?utm_source=pumpthejam&utm_medium=agenda&utm_campaign=agenda_flashback&utm_content=jagers-festa-viva-os-anos-80&utm_term=ribeirao-preto
-END:VEVENT
-BEGIN:VEVENT
-UID:ptj-19-20261204T1800@pumpthejam.com.br
+UID:ptj-17-20261204T1800@pumpthejam.com.br
 DTSTART;TZID=America/Sao_Paulo:20261204T180000
 SUMMARY:Kombuca Disco - Noite de Flashback
 LOCATION: - São Paulo
 URL:https://www.sympla.com.br/evento/kombuca-disco-noite-de-flashback/3647132?utm_source=pumpthejam&utm_medium=agenda&utm_campaign=agenda_flashback&utm_content=kombuca-disco-noite-de-flashback&utm_term=sao-paulo
 END:VEVENT
 BEGIN:VEVENT
-UID:ptj-20-20261204T2200@pumpthejam.com.br
+UID:ptj-18-20261204T2200@pumpthejam.com.br
 DTSTART;TZID=America/Sao_Paulo:20261204T220000
 SUMMARY:NATAL SANGRENTO: 80s NIGHT
 LOCATION: - Campinas
 URL:https://www.sympla.com.br/evento/natal-sangrento-80s-night/3659999?utm_source=pumpthejam&utm_medium=agenda&utm_campaign=agenda_flashback&utm_content=natal-sangrento-80s-night&utm_term=campinas
 END:VEVENT
 BEGIN:VEVENT
-UID:ptj-21-20261205T1400@pumpthejam.com.br
+UID:ptj-19-20261205T1400@pumpthejam.com.br
 DTSTART;TZID=America/Sao_Paulo:20261205T140000
 SUMMARY:CLUBE DOS 30 no Edifício Martinelli! | 05.12
 LOCATION: - São Paulo
 URL:https://www.sympla.com.br/evento/clube-dos-30-no-edificio-martinelli-05-12/3647660?utm_source=pumpthejam&utm_medium=agenda&utm_campaign=agenda_flashback&utm_content=clube-dos-30-no-edificio-martinelli-05-1&utm_term=sao-paulo
 END:VEVENT
 BEGIN:VEVENT
-UID:ptj-22-20261205T1400@pumpthejam.com.br
+UID:ptj-20-20261205T1400@pumpthejam.com.br
 DTSTART;TZID=America/Sao_Paulo:20261205T140000
 SUMMARY:Franz Schubert Legacy - 80s 90s 2000s
 LOCATION: - São Paulo
 URL:https://www.sympla.com.br/evento/franz-schubert-legacy-80s-90s-2000s/3616495?utm_source=pumpthejam&utm_medium=agenda&utm_campaign=agenda_flashback&utm_content=franz-schubert-legacy-80s-90s-2000s&utm_term=sao-paulo
 END:VEVENT
 BEGIN:VEVENT
-UID:ptj-23-20261205T2200@pumpthejam.com.br
+UID:ptj-21-20261205T2200@pumpthejam.com.br
 DTSTART;TZID=America/Sao_Paulo:20261205T220000
 SUMMARY:Pra Sempre Cringe | São Paulo/SP @ Cine Jóia
 LOCATION: - São Paulo
 URL:https://www.sympla.com.br/evento/pra-sempre-cringe-sao-paulo-sp-cine-joia/3630311?utm_source=pumpthejam&utm_medium=agenda&utm_campaign=agenda_flashback&utm_content=pra-sempre-cringe-sao-paulo-sp-cine-joia&utm_term=sao-paulo
 END:VEVENT
 BEGIN:VEVENT
-UID:ptj-24-20261205T2300@pumpthejam.com.br
+UID:ptj-22-20261205T2300@pumpthejam.com.br
 DTSTART;TZID=America/Sao_Paulo:20261205T230000
 SUMMARY:CLUBE DOS 30 no Edifício Martinelli | 05.12 (Edição Corujão!)
 LOCATION: - São Paulo
 URL:https://www.sympla.com.br/evento/clube-dos-30-no-edificio-martinelli-05-12-edicao-corujao/3647662?utm_source=pumpthejam&utm_medium=agenda&utm_campaign=agenda_flashback&utm_content=clube-dos-30-no-edificio-martinelli-05-1&utm_term=sao-paulo
 END:VEVENT
 BEGIN:VEVENT
-UID:ptj-25-20261205T2300@pumpthejam.com.br
+UID:ptj-23-20261205T2300@pumpthejam.com.br
 DTSTART;TZID=America/Sao_Paulo:20261205T230000
 SUMMARY:Trash 80's Classix - 5/12 - Cambridge
 LOCATION: - São Paulo
 URL:https://www.sympla.com.br/evento/trash-80-s-classix-5-12-cambridge/3662417?utm_source=pumpthejam&utm_medium=agenda&utm_campaign=agenda_flashback&utm_content=trash-80-s-classix-5-12-cambridge&utm_term=sao-paulo
 END:VEVENT
 BEGIN:VEVENT
-UID:ptj-26-20261206T1500@pumpthejam.com.br
+UID:ptj-24-20261206T1500@pumpthejam.com.br
 DTSTART;TZID=America/Sao_Paulo:20261206T150000
 SUMMARY:TIGER 90 Matinê - O melhor dos anos 90 na Tarantino Cervejaria
 LOCATION: - São Paulo
 URL:https://www.sympla.com.br/evento/tiger-90-matine-o-melhor-dos-anos-90-na-tarantino-cervejaria/3649315?utm_source=pumpthejam&utm_medium=agenda&utm_campaign=agenda_flashback&utm_content=tiger-90-matine-o-melhor-dos-anos-90-na-&utm_term=sao-paulo
 END:VEVENT
 BEGIN:VEVENT
-UID:ptj-27-20261206T1800@pumpthejam.com.br
+UID:ptj-25-20261206T1800@pumpthejam.com.br
 DTSTART;TZID=America/Sao_Paulo:20261206T180000
 SUMMARY:SOIRÉE APRESENTA: SUMMER ELETROHITS ADRIANO PAGANI + DIMY SOLLER @ MOTIRÔ | DOMINGO 06.12
 LOCATION: - São Paulo
 URL:https://www.sympla.com.br/evento/soiree-apresenta-summer-eletrohits-adriano-pagani-dimy-soller-motiro-domingo-06-12/3655450?utm_source=pumpthejam&utm_medium=agenda&utm_campaign=agenda_flashback&utm_content=soiree-apresenta-summer-eletrohits-adria&utm_term=sao-paulo
 END:VEVENT
 BEGIN:VEVENT
-UID:ptj-28-20261212T2100@pumpthejam.com.br
+UID:ptj-26-20261212T1900@pumpthejam.com.br
+DTSTART;TZID=America/Sao_Paulo:20261212T190000
+SUMMARY:Última Trash 80's do ano no Espaço Authoral - 12/12/26
+LOCATION: - São Paulo
+URL:https://www.sympla.com.br/evento/ultima-trash-80-s-do-ano-no-espaco-authoral-12-12-26/3663518?utm_source=pumpthejam&utm_medium=agenda&utm_campaign=agenda_flashback&utm_content=ultima-trash-80-s-do-ano-no-espaco-autho&utm_term=sao-paulo
+END:VEVENT
+BEGIN:VEVENT
+UID:ptj-27-20261212T2100@pumpthejam.com.br
 DTSTART;TZID=America/Sao_Paulo:20261212T210000
 SUMMARY:Pra Sempre Cringe | São Carlos/SP
 LOCATION: - São Carlos
 URL:https://www.sympla.com.br/evento/pra-sempre-cringe-sao-carlos-sp/3635982?utm_source=pumpthejam&utm_medium=agenda&utm_campaign=agenda_flashback&utm_content=pra-sempre-cringe-sao-carlos-sp&utm_term=sao-carlos
 END:VEVENT
 BEGIN:VEVENT
-UID:ptj-29-20261212T2100@pumpthejam.com.br
+UID:ptj-28-20261212T2100@pumpthejam.com.br
 DTSTART;TZID=America/Sao_Paulo:20261212T210000
 SUMMARY:Festa Darks & 80's
 LOCATION: - Santo André
 URL:https://www.sympla.com.br/evento/festa-darks-80-s/3642820?utm_source=pumpthejam&utm_medium=agenda&utm_campaign=agenda_flashback&utm_content=festa-darks-80-s&utm_term=santo-andre
 END:VEVENT
 BEGIN:VEVENT
-UID:ptj-30-20261212T2100@pumpthejam.com.br
+UID:ptj-29-20261212T2100@pumpthejam.com.br
 DTSTART;TZID=America/Sao_Paulo:20261212T210000
 SUMMARY:Pra Sempre Cringe · anos 80 90 e 00
 LOCATION:Zoom Music Hall - São Carlos
 URL:https://www.sympla.com.br/evento/pra-sempre-cringe-sao-carlos-sp/3635982?utm_source=pumpthejam&utm_medium=agenda&utm_campaign=agenda_flashback&utm_content=pra-sempre-cringe-anos-80-90-e-00&utm_term=sao-carlos
+END:VEVENT
+BEGIN:VEVENT
+UID:ptj-30-20261212T2230@pumpthejam.com.br
+DTSTART;TZID=America/Sao_Paulo:20261212T223000
+SUMMARY:SUMMER ELETRO HITS @ LE CLUB
+LOCATION: - São Paulo
+URL:https://www.sympla.com.br/evento/summer-eletro-hits-le-club/3626387?utm_source=pumpthejam&utm_medium=agenda&utm_campaign=agenda_flashback&utm_content=summer-eletro-hits-le-club&utm_term=sao-paulo
 END:VEVENT
 BEGIN:VEVENT
 UID:ptj-31-20261212T2300@pumpthejam.com.br
@@ -275,5 +275,12 @@ DTSTART;TZID=America/Sao_Paulo:20270123T200000
 SUMMARY:BackSpin Remember 2 edição
 LOCATION: - Campinas
 URL:https://www.sympla.com.br/evento/backspin-remember-2-edicao/3649916?utm_source=pumpthejam&utm_medium=agenda&utm_campaign=agenda_flashback&utm_content=backspin-remember-2-edicao&utm_term=campinas
+END:VEVENT
+BEGIN:VEVENT
+UID:ptj-39-20270124T2300@pumpthejam.com.br
+DTSTART;TZID=America/Sao_Paulo:20270124T230000
+SUMMARY:Nostalgias 2000 A Festa: Aquecimento Show Pitbull - Rua Augusta, 591 - Véspera de Feriado
+LOCATION: - São Paulo
+URL:https://www.sympla.com.br/evento/nostalgias-2000-a-festa-aquecimento-show-pitbull-rua-augusta-591-vespera-de-feriado/3663930?utm_source=pumpthejam&utm_medium=agenda&utm_campaign=agenda_flashback&utm_content=nostalgias-2000-a-festa-aquecimento-show&utm_term=sao-paulo
 END:VEVENT
 END:VCALENDAR
